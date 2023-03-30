@@ -7,6 +7,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <!-- loading js -->
+    <?= $this->Html->script('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js',['block'=>'js']) ?>
 
     <title>Hello, world!</title>
   </head>
@@ -26,6 +29,10 @@
    <?= $this->fetch('content'); ?>
 
    <?= $this->element('footer') ?>
+
+   <!-- loading js with block -->
+   <?= $this->fetch('js'); ?>
+
 
   </body>
 </html>
