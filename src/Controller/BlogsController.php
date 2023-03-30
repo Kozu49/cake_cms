@@ -17,9 +17,8 @@ class BlogsController extends AppController
     public function home()
     {
         $this->loadModel('Articles');
-        $articles=$this->Articles->find('all')
-                                    ->limit(3);
-        $this->set('articles',$articles);
+        $articles=$this->Articles->find('all');
+        $this->set('articles',$this->paginate($articles,['limit'=>3]));
 
 
         // $recentArticles = $this->fetchTable('Articles')->find('all', [
