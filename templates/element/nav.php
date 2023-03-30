@@ -4,14 +4,14 @@
         <ul class="navbar-nav mx-auto">
 
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href=<?= $this->Url->build(['controller' => 'blogs', 'action' => 'home']) ?>>Home</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href=<?= $this->Url->build(['controller' => 'blogs', 'action' => 'about']) ?>>About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href=<?= $this->Url->build(['controller' => 'blogs', 'action' => 'contact']) ?>>Contact</a>
           </li>
         </ul>
       </div>
