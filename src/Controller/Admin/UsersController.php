@@ -31,8 +31,18 @@ class UsersController extends AppController
     {
         $key = $this->request->getQuery('name');
         if ($key) {
-            $query = $this->Users->find()->where(['username LIKE' => '%' . $key . '%']);
-            $query = $this->Users->find()->where(['Or'=>['username LIKE' => '%' . $key . '%','email LIKE' => '%' . $key . '%']]);
+            // ** search using get method *******
+                    // $query = $this->Users->find()->where(['username LIKE' => '%' . $key . '%']);
+                    // $query = $this->Users->find()->where(['Or'=>['username LIKE' => '%' . $key . '%','email LIKE' => '%' . $key . '%']]);
+            // ** search using get method ends *******
+
+            // ** Dynamic search *******
+                    // $query= $this->Users->findByUsername($key);
+                    $query = $this->Users->findAllByUsernameOrEmail($key,$key);
+
+
+            // ** Dynamic search ends *******
+
 
         }else {
 

@@ -11,7 +11,9 @@
     <?=$this->Form->create(null, ['url' => ['controller' => 'Users', 'action' => 'index'], 'type' => 'get'])?>
     <?= $this->Form->input('name', ['label' => 'Search', 'value' => $this->request->getQuery('name')]) ?>
     <?= $this->Form->submit(__('Search')) ?>
+    <?=$this->Html->link(__('Refresh'), ['controller'=>'users','action' => 'index'],['class' => 'button'])?>
     <?=$this->Form->end()?>
+    
 
 
     <div class="table-responsive">
