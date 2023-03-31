@@ -43,26 +43,42 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
-        $this->loadComponent('Auth', [
-            'loginRedirect'=>[
-                'controller'=>'users',
-                'action'=>'index'
-            ],
-            'authenticate' => [
-                'Form' => [
-                    'fields' => ['username' => 'email', 'password' => 'password']
-                ]
-            ]
-        ]);
-        // $this->Auth->allow(['login','index']);
-        $this->set('user',$this->Auth->user('username'));
+
+        // **Code for Auth Component *************************************************************
+
+                    // $this->loadComponent('Auth', [
+                    //     'loginRedirect'=>[
+                    //         'controller'=>'users',
+                    //         'action'=>'index'
+                    //     ],
+                    //     'authenticate' => [
+                    //         'Form' => [
+                    //             'fields' => ['username' => 'email', 'password' => 'password']
+                    //         ]
+                    //     ]
+                    // ]);
+
+                    // $this->Auth->allow('login');
+
+                    // $this->set('user',$this->Auth->user('username'));
+
+                    /*
+                    * Enable the following component for recommended CakePHP form protection settings.
+                    * see https://book.cakephp.org/4/en/controllers/components/form-protection.html
+                    */
+                    //$this->loadComponent('FormProtection');
+
+         // **Code for Auth Component Ends**********************************************************
+
+       
+         // **Code for authentication plugin **********************************************************
+        
+                    $this->loadComponent('Authentication.Authentication');
+
+        // **Code for authentication plugin Ends **********************************************************
 
 
-        /*
-         * Enable the following component for recommended CakePHP form protection settings.
-         * see https://book.cakephp.org/4/en/controllers/components/form-protection.html
-         */
-        //$this->loadComponent('FormProtection');
+
     }
 
 }

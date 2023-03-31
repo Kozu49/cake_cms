@@ -14,43 +14,52 @@
  * @var \App\View\AppView $this
  */
 
+use PHPUnit\Framework\MockObject\Builder\Identity;
+
 $cakeDescription = 'CakePHP: the rapid development php framework';
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <?= $this->Html->charset() ?>
+    <?=$this->Html->charset()?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-        <?= $cakeDescription ?>:
-        <?= $this->fetch('title') ?>
+        <?=$cakeDescription?>:
+        <?=$this->fetch('title')?>
     </title>
-    <?= $this->Html->meta('icon') ?>
+    <?=$this->Html->meta('icon')?>
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
 
-    <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake']) ?>
-    <?= $this->fetch('meta') ?>
-    <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
+    <?=$this->Html->css(['normalize.min', 'milligram.min', 'cake'])?>
+    <?=$this->fetch('meta')?>
+    <?=$this->fetch('css')?>
+    <?=$this->fetch('script')?>
 </head>
 <body>
     <nav class="top-nav">
         <div class="top-nav-title">
-            <a href="<?= $this->Url->build('/') ?>"><span>Cake</span>PHP</a>
+            <a href="<?=$this->Url->build('/')?>"><span>Cake</span>PHP</a>
         </div>
         <div class="top-nav-links">
             <a target="_blank" rel="noopener" href="https://book.cakephp.org/4/">Documentation</a>
             <a target="_blank" rel="noopener" href="https://api.cakephp.org/">API</a>
-            <?php if($user) :?>
-            <?= $this->Html->link(('Log Out'), ['controller'=>'users','action' => 'logout']) ?>
-            <?php endif ;?>
+
+            <?php if ($this->Identity->get('username')): ?>
+                <?=$this->Html->link(('Log Out'), ['controller' => 'users', 'action' => 'logout'])?>
+                <?php endif;?>
+
+
+            <?php /* if($user) :?>
+<?= $this->Html->link(('Log Out'), ['controller'=>'users','action' => 'logout']) ?>
+<?php endif ; */?>
+
         </div>
     </nav>
     <main class="main">
         <div class="container">
-            <?= $this->Flash->render() ?>
-            <?= $this->fetch('content') ?>
+            <?=$this->Flash->render()?>
+            <?=$this->fetch('content')?>
         </div>
     </main>
     <footer>
