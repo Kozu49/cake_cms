@@ -45,14 +45,15 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <a target="_blank" rel="noopener" href="https://book.cakephp.org/4/">Documentation</a>
             <a target="_blank" rel="noopener" href="https://api.cakephp.org/">API</a>
 
+            <!-- plugin auth -->
             <?php if ($this->Identity->get('username')): ?>
                 <?=$this->Html->link(('Log Out'), ['controller' => 'users', 'action' => 'logout'])?>
-                <?php endif;?>
+            <?php endif; ?>
 
-
-            <?php /* if($user) :?>
-<?= $this->Html->link(('Log Out'), ['controller'=>'users','action' => 'logout']) ?>
-<?php endif ; */?>
+            <!-- auth component -->
+            <?php if($user) :?>
+            <?= $this->Html->link(('Log Out'), ['controller'=>'users','action' => 'logout']) ?>
+            <?php endif ; ?>
 
         </div>
     </nav>

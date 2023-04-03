@@ -19,32 +19,30 @@ class UsersController extends AppController
      * @return \Cake\Http\Response|null|void Renders view
      */
 
-    public function beforeFilter(\Cake\Event\EventInterface$event)
-    {
-        parent::beforeFilter($event);
-        // Configure the login action to not require authentication, preventing
-        // the infinite redirect loop issue
-        $this->Authentication->addUnauthenticatedActions(['login']);
-    }
+    // public function beforeFilter(\Cake\Event\EventInterface$event)
+    // {
+    //     parent::beforeFilter($event);
+    //     // Configure the login action to not require authentication, preventing
+    //     // the infinite redirect loop issue
+    //     $this->Authentication->addUnauthenticatedActions(['login']);
+    // }
 
     public function index()
     {
         $key = $this->request->getQuery('name');
         if ($key) {
             // ** search using get method *******
-                    // $query = $this->Users->find()->where(['username LIKE' => '%' . $key . '%']);
-                    // $query = $this->Users->find()->where(['Or'=>['username LIKE' => '%' . $key . '%','email LIKE' => '%' . $key . '%']]);
+            // $query = $this->Users->find()->where(['username LIKE' => '%' . $key . '%']);
+            // $query = $this->Users->find()->where(['Or'=>['username LIKE' => '%' . $key . '%','email LIKE' => '%' . $key . '%']]);
             // ** search using get method ends *******
 
             // ** Dynamic search *******
-                    // $query= $this->Users->findByUsername($key);
-                    $query = $this->Users->findAllByUsernameOrEmail($key,$key);
-
+            // $query= $this->Users->findByUsername($key);
+            $query = $this->Users->findAllByUsernameOrEmail($key, $key);
 
             // ** Dynamic search ends *******
 
-
-        }else {
+        } else {
 
             $query = $this->Users;
 
@@ -79,7 +77,16 @@ class UsersController extends AppController
         $user = $this->Users->newEmptyEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
-            if ($this->Users->save($user)) {
+            //    dd($this->request->getData());
+            if ($this->request->getData('image')->getSize() > 0) {
+                $file = $this->request->getData('image');
+                $fileName = $file->getClientFilename();
+                $tmpName = $file->getStream()->getMetadata('uri');
+                $uploadPath = WWW_ROOT . 'img' . DS . $fileName;
+                move_uploaded_file($tmpName, $uploadPath . $fileName);
+                $user->image = $fileName;
+            }
+            if ($this->Users->saveOrFail($user)) {
                 $this->Flash->success(__('The user has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
@@ -133,47 +140,81 @@ class UsersController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-    // public function login()
-    // {
-    //     if ($this->request->is('post')) {
-    //         $user = $this->Auth->identify();
-    //         if ($user) {
-    //             $this->Auth->setUser($user);
-    //             return $this->redirect($this->Auth->redirectUrl());
-    //         } else {
-    //             $this->Flash->error(__('Username or password is incorrect'));
-    //         }
-    //     }
-    // }
     public function login()
     {
-        $this->request->allowMethod(['get', 'post']);
-        $result = $this->Authentication->getResult();
-        // regardless of POST or GET, redirect if user is logged in
-        if ($result && $result->isValid()) {
+        if ($this->request->is('post')) {
+            $user = $this->Auth->identify();
+            if ($user) {
+                $this->Auth->setUser($user);
+              
+                if ($user['status'] == 0) {
+                    $this->Flash->error(__('You do not have access!!'));
+                    return $this->redirect(['controller' => 'users', 'action' => 'logout']);
 
-            return $this->redirect(['controller' => 'Users', 'action' => 'index']);
-        }
-        // display error if user submitted and authentication failed
-        if ($this->request->is('post') && !$result->isValid()) {
-            $this->Flash->error(__('Invalid username or password'));
+                }
+                return $this->redirect($this->Auth->redirectUrl());
+            } else {
+                $this->Flash->error(__('Username or password is incorrect'));
+            }
         }
     }
-
-    // public function logout()
+    // public function login()
     // {
-    //     return $this->redirect($this->Auth->logout());
+    //     $this->request->allowMethod(['get', 'post']);
+    //     $result = $this->Authentication->getResult();
+    //     // regardless of POST or GET, redirect if user is logged in
+    //     if ($result && $result->isValid()) {
+
+    //         return $this->redirect(['controller' => 'Users', 'action' => 'index']);
+    //     }
+    //     // display error if user submitted and authentication failed
+    //     if ($this->request->is('post') && !$result->isValid()) {
+    //         $this->Flash->error(__('Invalid username or password'));
+    //     }
     // }
 
     public function logout()
     {
-        $result = $this->Authentication->getResult();
-        // regardless of POST or GET, redirect if user is logged in
-        if ($result && $result->isValid()) {
-            $this->Authentication->logout();
-            return $this->redirect(['controller' => 'Users', 'action' => 'login']);
-        }
+        return $this->redirect($this->Auth->logout());
     }
 
-    
+    // public function logout()
+    // {
+    //     $result = $this->Authentication->getResult();
+    //     // regardless of POST or GET, redirect if user is logged in
+    //     if ($result && $result->isValid()) {
+    //         $this->Authentication->logout();
+    //         return $this->redirect(['controller' => 'Users', 'action' => 'login']);
+    //     }
+    // }
+
+    public function deleteAll()
+    {
+        $this->request->allowMethod(['post', 'delete']);
+        $ids = $this->request->getData('ids');
+        if ($this->Users->deleteAll(['Users.id IN' => $ids])) {
+            $this->Flash->success(__('The users has been deleted.'));
+        }
+        return $this->redirect(['action' => 'index']);
+    }
+
+    public function userStatus($id = null, $status)
+    {
+        $this->request->allowMethod(['post']);
+        $user = $this->Users->get($id);
+        if ($status == 1) {
+            $user->status = 0;
+
+        } else {
+            $user->status = 1;
+
+        }
+        if ($this->Users->save($user)) {
+            $this->Flash->success(__('Status Updated Sucessfully'));
+
+            return $this->redirect(['action' => 'index']);
+        }
+        $this->Flash->error(__('The user could not be update status. Please, try again.'));
+    }
+
 }

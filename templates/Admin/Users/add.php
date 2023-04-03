@@ -7,26 +7,28 @@
 <div class="row">
     <aside class="column">
         <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('List Users'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <h4 class="heading"><?=__('Actions')?></h4>
+            <?=$this->Html->link(__('List Users'), ['action' => 'index'], ['class' => 'side-nav-item'])?>
         </div>
     </aside>
     <div class="column-responsive column-80">
         <div class="users form content">
-            <?= $this->Form->create($user) ?>
+            <?=$this->Form->create($user, [
+    'enctype' => 'multipart/form-data'
+    ])?>
             <fieldset>
-                <legend><?= __('Add User') ?></legend>
+                <legend><?=__('Add User')?></legend>
                 <?php
-                    echo $this->Form->control('username');
-                    echo $this->Form->control('email');
-                    echo $this->Form->control('amount');
-                    echo $this->Form->control('password');
-                    echo $this->Form->control('image');
-                    echo $this->Form->control('status');
-                ?>
+            echo $this->Form->control('username');
+            echo $this->Form->control('email');
+            echo $this->Form->control('amount');
+            echo $this->Form->control('password');
+            echo $this->Form->control('image', ['type' => 'file']) ;
+            echo $this->Form->control('status');
+            ?>
             </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
+            <?=$this->Form->button(__('Submit'))?>
+            <?=$this->Form->end()?>
         </div>
     </div>
 </div>
