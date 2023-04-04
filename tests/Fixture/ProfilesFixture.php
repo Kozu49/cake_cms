@@ -22,8 +22,8 @@ class ProfilesFixture extends TestFixture
                 'id' => 1,
                 'user_id' => 1,
                 'mobile' => 1,
-                'created' => '2023-03-31 06:33:51',
-                'modified' => '2023-03-31 06:33:51',
+                'created' => '2023-04-04 08:56:18',
+                'modified' => '2023-04-04 08:56:18',
             ],
         ];
         parent::init();

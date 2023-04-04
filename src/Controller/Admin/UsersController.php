@@ -4,7 +4,8 @@ declare (strict_types = 1);
 namespace App\Controller\Admin;
 
 use App\Controller\Admin\AppController;
-
+use Cake\Filesystem\Folder;
+use Cake\Filesystem\File;
 /**
  * Users Controller
  *
@@ -47,7 +48,7 @@ class UsersController extends AppController
             $query = $this->Users;
 
         }
-        $users = $this->paginate($query);
+        $users = $this->paginate($query,['contain'=>['Profiles']]);
         $this->set(compact('users'));
     }
 
@@ -81,10 +82,15 @@ class UsersController extends AppController
             if ($this->request->getData('image')->getSize() > 0) {
                 $file = $this->request->getData('image');
                 $fileName = $file->getClientFilename();
-                $tmpName = $file->getStream()->getMetadata('uri');
-                $uploadPath = WWW_ROOT . 'img' . DS . $fileName;
-                move_uploaded_file($tmpName, $uploadPath . $fileName);
-                $user->image = $fileName;
+                if(!is_dir(WWW_ROOT.'img'.DS.'user_img')){
+                    mkdir(WWW_ROOT.'img'.DS.'user_img',0777);
+                }
+                $target_path=WWW_ROOT.'img'.DS.'user_img'.DS.$fileName;
+                if($fileName){
+                    $file->moveTO($target_path);
+                    $user->image = 'user_img/'.$fileName;
+                }
+                
             }
             if ($this->Users->saveOrFail($user)) {
                 $this->Flash->success(__('The user has been saved.'));
@@ -110,6 +116,25 @@ class UsersController extends AppController
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
+            if ($this->request->getData('change_image')->getSize() > 0) {
+                $file = $this->request->getData('change_image');
+                $fileName = $file->getClientFilename();
+                if(!is_dir(WWW_ROOT.'img'.DS.'user_img')){
+                    mkdir(WWW_ROOT.'img'.DS.'user_img',0777);
+                }
+                $target_path=WWW_ROOT.'img'.DS.'user_img'.DS.$fileName;
+                if($fileName){
+                    $imgpath=WWW_ROOT.'img'.DS.$user->image;
+
+                        if(file_exists($imgpath)){
+                            unlink($imgpath);
+                        }
+                    $file->moveTO($target_path);
+                    $user->image = 'user_img/'.$fileName;
+            
+                }
+                
+            }
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
 
@@ -131,7 +156,11 @@ class UsersController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $user = $this->Users->get($id);
+        $imgpath=WWW_ROOT.'img'.DS.$user->image;
         if ($this->Users->delete($user)) {
+            if(file_exists($imgpath)){
+                unlink($imgpath);
+            }
             $this->Flash->success(__('The user has been deleted.'));
         } else {
             $this->Flash->error(__('The user could not be deleted. Please, try again.'));
@@ -192,6 +221,7 @@ class UsersController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $ids = $this->request->getData('ids');
+        dd($ids);
         if ($this->Users->deleteAll(['Users.id IN' => $ids])) {
             $this->Flash->success(__('The users has been deleted.'));
         }

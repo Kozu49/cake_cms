@@ -48,12 +48,13 @@ class UsersTable extends Table
 
         $this->addBehavior('Timestamp');
 
-        $this->hasMany('Profiles', [
-            'foreignKey' => 'user_id',
-        ]);
+        // $this->hasMany('Profiles', [
+        //     'foreignKey' => 'user_id',
+        // ]);
         $this->hasMany('Skills', [
             'foreignKey' => 'user_id',
         ]);
+        $this->hasOne('Profiles');
     }
 
     /**
@@ -75,10 +76,7 @@ class UsersTable extends Table
             ->requirePresence('email', 'create')
             ->notEmptyString('email');
 
-        $validator
-            ->integer('amount')
-            ->requirePresence('amount', 'create')
-            ->notEmptyString('amount');
+       
 
         $validator
             ->scalar('password')
@@ -92,8 +90,7 @@ class UsersTable extends Table
             ->requirePresence('image', 'create')
             ->notEmptyFile('image');
 
-        $validator
-            ->notEmptyString('status');
+
 
         return $validator;
     }
