@@ -29,6 +29,7 @@
                     <th><?=$this->Paginator->sort('email')?></th>
                     <th><?=$this->Paginator->sort('mobile')?></th>
                     <th><?=$this->Paginator->sort('image')?></th>
+                    <th><?=$this->Paginator->sort('skill')?></th>
                     <th><?=$this->Paginator->sort('Status')?></th>
                     <th><?=$this->Paginator->sort('created')?></th>
                     <th><?=$this->Paginator->sort('modified')?></th>
@@ -50,6 +51,13 @@
                         'width' => 150, 
                         'height' => 100
                     ])?>
+                </td>
+                <td>
+                   <?php
+                        foreach($user->skills as $key => $skill){
+                            echo $skill->name. " ";
+                        }
+                    ?>
                 </td>
                 <td>
                 <?php if ($user->status == 1): ?>

@@ -52,9 +52,11 @@ class UsersTable extends Table
         //     'foreignKey' => 'user_id',
         // ]);
         $this->hasMany('Skills', [
+            'dependent'=>true,
             'foreignKey' => 'user_id',
         ]);
-        $this->hasOne('Profiles');
+        
+        $this->hasOne('Profiles',['dependent'=>true]);
     }
 
     /**

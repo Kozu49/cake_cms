@@ -6,10 +6,16 @@ namespace App\Test\Fixture;
 use Cake\TestSuite\Fixture\TestFixture;
 
 /**
- * SkillsFixture
+ * MenusFixture
  */
-class SkillsFixture extends TestFixture
+class MenusFixture extends TestFixture
 {
+    /**
+     * Table name
+     *
+     * @var string
+     */
+    public $table = 'menus';
     /**
      * Init method
      *
@@ -20,10 +26,10 @@ class SkillsFixture extends TestFixture
         $this->records = [
             [
                 'id' => 1,
-                'user_id' => 1,
-                'name' => 'Lorem ipsum dolor sit amet',
-                'created' => '2023-04-04 11:37:00',
-                'modified' => '2023-04-04 11:37:00',
+                'name' => 'Lorem ipsum dolor sit a',
+                'status' => 1,
+                'created' => '2023-04-05 04:13:57',
+                'modified' => '2023-04-05 04:13:57',
             ],
         ];
         parent::init();
