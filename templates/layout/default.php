@@ -46,6 +46,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <a target="_blank" rel="noopener" href="https://api.cakephp.org/">API</a>
 
             <!-- plugin auth -->
+
+        
             <?php if ($this->Identity->get('username')): ?>
                 <?=$this->Html->link(('Log Out'), ['controller' => 'users', 'action' => 'logout'])?>
             <?php endif; ?>

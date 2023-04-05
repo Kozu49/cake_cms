@@ -1,3 +1,29 @@
+<?php
+
+  $this->Breadcrumbs->add([
+          [
+            'title' => 'Home', 
+            'url' => ['controller' => 'Blogs', 'action' => 'home'],
+            'options' => ['class'=>'breadcrumb-item']
+          ],
+
+
+          [
+            'title' => $article->title, 
+            'url' => ['controller' => 'Blogs', 'action' => 'view', $article->id],
+            'options' => [
+                            'class'=>'breadcrumb-item active',
+                            'innerAttrs' => [
+                              'class' => 'test-list-class',
+                              'id' => 'the-products-crumb'
+                          ]
+            
+                        ]
+          ]
+  ]);
+
+
+?>
 <div class="container">
 
     <div class="row">

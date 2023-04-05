@@ -23,7 +23,7 @@
                 <?php foreach ($skills as $skill): ?>
                 <tr>
                     <td><?= $this->Number->format($skill->id) ?></td>
-                    <td><?= $skill->has('user') ? $this->Html->link($skill->user->id, ['controller' => 'Users', 'action' => 'view', $skill->user->id]) : '' ?></td>
+                    <td><?= $skill->has('user') ? $this->Html->link($skill->user->username, ['controller' => 'Users', 'action' => 'view', $skill->user->id]) : '' ?></td>
                     <td><?= h($skill->name) ?></td>
                     <td><?= h($skill->created) ?></td>
                     <td><?= h($skill->modified) ?></td>
