@@ -170,12 +170,12 @@ class UsersController extends AppController
     }
 
     public function login()
-    {
+    { 
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
             if ($user) {
                 $this->Auth->setUser($user);
-              
+                $this->UserLogs->saveIP($user['id']);
                 if ($user['status'] == 0) {
                     $this->Flash->error(__('You do not have access!!'));
                     return $this->redirect(['controller' => 'users', 'action' => 'logout']);

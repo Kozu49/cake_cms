@@ -4,6 +4,9 @@
  * @var iterable<\Cake\Datasource\EntityInterface> $users
  */
 ?>
+<!-- added css for a single view -->
+<?php $this->Html->css('my',['block'=>true])  ?>
+<!-- . -->
 
 <div class="users index content">
     <?=$this->Html->link(__('New User'), ['action' => 'add'], ['class' => 'button float-right'])?>
