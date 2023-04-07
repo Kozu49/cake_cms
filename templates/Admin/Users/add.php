@@ -4,6 +4,7 @@
  * @var \Cake\Datasource\EntityInterface $user
  */
 ?>
+
 <div class="row">
     <aside class="column">
         <div class="side-nav">
@@ -28,8 +29,25 @@
             echo $this->Form->control('image', ['type' => 'file']) ;
             ?>
             </fieldset>
-            <?=$this->Form->button(__('Submit'))?>
+            <?=$this->Form->button(__('Submit'),['id'=>'cakebtn'])?>
             <?=$this->Form->end()?>
         </div>
     </div>
 </div>
+
+<!-- <script>
+    $(function(){
+            $('#cakebtn').click(function(){
+               $.ajax({
+                method:"POST",
+                url:"<?= $this->Url->build(['controller'=>'Users','action'=>'receive'])?>",
+                data:{
+                    id:10
+                },
+                headers: {
+                    'X-CSRF-Token': $('meta[name="csrfToken"]').attr('content')
+                }
+               })
+            });
+    })
+</script> -->

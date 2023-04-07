@@ -75,8 +75,10 @@ class UsersController extends AppController
      */
     public function add()
     {
+       
         $user = $this->Users->newEmptyEntity();
         if ($this->request->is('post')) {
+            exit('asd');
             $user = $this->Users->patchEntity($user, $this->request->getData());
             //    dd($this->request->getData());
             if ($this->request->getData('image')->getSize() > 0) {
@@ -245,6 +247,12 @@ class UsersController extends AppController
             return $this->redirect(['action' => 'index']);
         }
         $this->Flash->error(__('The user could not be update status. Please, try again.'));
+    }
+
+    public function receive(){
+        $id=$this->request->getData();
+        debug($id);
+        exit();
     }
 
 }

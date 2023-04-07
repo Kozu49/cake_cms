@@ -1,0 +1,665 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2023-04-07 09:36+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: ./src/Controller/Admin/SkillsController.php:58
+#: ./src/Controller/Admin/SkillsController.php:83
+msgid "The skill has been saved."
+msgstr ""
+
+#: ./src/Controller/Admin/SkillsController.php:62
+#: ./src/Controller/Admin/SkillsController.php:87
+msgid "The skill could not be saved. Please, try again."
+msgstr ""
+
+#: ./src/Controller/Admin/SkillsController.php:105
+msgid "The skill has been deleted."
+msgstr ""
+
+#: ./src/Controller/Admin/SkillsController.php:107
+msgid "The skill could not be deleted. Please, try again."
+msgstr ""
+
+#: ./src/Controller/Admin/UsersController.php:98
+#: ./src/Controller/Admin/UsersController.php:141
+msgid "The user has been saved."
+msgstr ""
+
+#: ./src/Controller/Admin/UsersController.php:102
+#: ./src/Controller/Admin/UsersController.php:145
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+
+#: ./src/Controller/Admin/UsersController.php:166
+msgid "The user has been deleted."
+msgstr ""
+
+#: ./src/Controller/Admin/UsersController.php:168
+msgid "The user could not be deleted. Please, try again."
+msgstr ""
+
+#: ./src/Controller/Admin/UsersController.php:182
+msgid "You do not have access!!"
+msgstr ""
+
+#: ./src/Controller/Admin/UsersController.php:188
+msgid "Username or password is incorrect"
+msgstr ""
+
+#: ./src/Controller/Admin/UsersController.php:228
+msgid "The users has been deleted."
+msgstr ""
+
+#: ./src/Controller/Admin/UsersController.php:245
+msgid "Status Updated Sucessfully"
+msgstr ""
+
+#: ./src/Controller/Admin/UsersController.php:249
+msgid "The user could not be update status. Please, try again."
+msgstr ""
+
+#: ./src/Controller/ArticlesController.php:53
+#: ./src/Controller/ArticlesController.php:77
+msgid "The article has been saved."
+msgstr ""
+
+#: ./src/Controller/ArticlesController.php:57
+#: ./src/Controller/ArticlesController.php:81
+msgid "The article could not be saved. Please, try again."
+msgstr ""
+
+#: ./src/Controller/ArticlesController.php:98
+msgid "The article has been deleted."
+msgstr ""
+
+#: ./src/Controller/ArticlesController.php:100
+msgid "The article could not be deleted. Please, try again."
+msgstr ""
+
+#: ./src/Controller/FootballRagistrationsController.php:56
+#: ./src/Controller/FootballRagistrationsController.php:81
+msgid "The football ragistration has been saved."
+msgstr ""
+
+#: ./src/Controller/FootballRagistrationsController.php:60
+#: ./src/Controller/FootballRagistrationsController.php:85
+msgid "The football ragistration could not be saved. Please, try again."
+msgstr ""
+
+#: ./src/Controller/FootballRagistrationsController.php:103
+msgid "The football ragistration has been deleted."
+msgstr ""
+
+#: ./src/Controller/FootballRagistrationsController.php:105
+msgid "The football ragistration could not be deleted. Please, try again."
+msgstr ""
+
+#: ./src/Controller/PicnicRagistrationsController.php:56
+#: ./src/Controller/PicnicRagistrationsController.php:81
+msgid "The picnic ragistration has been saved."
+msgstr ""
+
+#: ./src/Controller/PicnicRagistrationsController.php:60
+#: ./src/Controller/PicnicRagistrationsController.php:85
+msgid "The picnic ragistration could not be saved. Please, try again."
+msgstr ""
+
+#: ./src/Controller/PicnicRagistrationsController.php:103
+msgid "The picnic ragistration has been deleted."
+msgstr ""
+
+#: ./src/Controller/PicnicRagistrationsController.php:105
+msgid "The picnic ragistration could not be deleted. Please, try again."
+msgstr ""
+
+#: ./src/Controller/ProfilesController.php:56
+#: ./src/Controller/ProfilesController.php:81
+msgid "The profile has been saved."
+msgstr ""
+
+#: ./src/Controller/ProfilesController.php:60
+#: ./src/Controller/ProfilesController.php:85
+msgid "The profile could not be saved. Please, try again."
+msgstr ""
+
+#: ./src/Controller/ProfilesController.php:103
+msgid "The profile has been deleted."
+msgstr ""
+
+#: ./src/Controller/ProfilesController.php:105
+msgid "The profile could not be deleted. Please, try again."
+msgstr ""
+
+#: ./src/Controller/StudentsController.php:70
+#: ./src/Controller/StudentsController.php:94
+msgid "The student has been saved."
+msgstr ""
+
+#: ./src/Controller/StudentsController.php:74
+#: ./src/Controller/StudentsController.php:98
+msgid "The student could not be saved. Please, try again."
+msgstr ""
+
+#: ./src/Controller/StudentsController.php:115
+msgid "The student has been deleted."
+msgstr ""
+
+#: ./src/Controller/StudentsController.php:117
+msgid "The student could not be deleted. Please, try again."
+msgstr ""
+
+#: ./templates/Admin/Skills/add.php:11
+#: ./templates/Admin/Skills/edit.php:11
+#: ./templates/Admin/Skills/index.php:19
+#: ./templates/Admin/Skills/view.php:10
+#: ./templates/Admin/Users/add.php:11
+#: ./templates/Admin/Users/edit.php:10
+#: ./templates/Admin/Users/index.php:40
+#: ./templates/Admin/Users/view.php:10
+#: ./templates/Articles/add.php:10
+#: ./templates/Articles/edit.php:10
+#: ./templates/Articles/index.php:18
+#: ./templates/Articles/view.php:10
+#: ./templates/FootballRagistrations/add.php:11
+#: ./templates/FootballRagistrations/edit.php:11
+#: ./templates/FootballRagistrations/index.php:18
+#: ./templates/FootballRagistrations/view.php:10
+#: ./templates/PicnicRagistrations/add.php:11
+#: ./templates/PicnicRagistrations/edit.php:11
+#: ./templates/PicnicRagistrations/index.php:19
+#: ./templates/PicnicRagistrations/view.php:10
+#: ./templates/Profiles/add.php:11
+#: ./templates/Profiles/edit.php:11
+#: ./templates/Profiles/index.php:19
+#: ./templates/Profiles/view.php:10
+#: ./templates/Students/add.php:10
+#: ./templates/Students/edit.php:10
+#: ./templates/Students/index.php:20
+#: ./templates/Students/view.php:10
+#: ./templates/Students/view.php:56
+#: ./templates/Students/view.php:86
+msgid "Actions"
+msgstr ""
+
+#: ./templates/Admin/Skills/add.php:12
+#: ./templates/Admin/Skills/edit.php:17
+#: ./templates/Admin/Skills/view.php:13
+msgid "List Skills"
+msgstr ""
+
+#: ./templates/Admin/Skills/add.php:19
+msgid "Add Skill"
+msgstr ""
+
+#: ./templates/Admin/Skills/add.php:25
+#: ./templates/Admin/Skills/edit.php:30
+#: ./templates/Admin/Users/add.php:32
+#: ./templates/Admin/Users/edit.php:38
+#: ./templates/Articles/add.php:24
+#: ./templates/Articles/edit.php:29
+#: ./templates/FootballRagistrations/add.php:26
+#: ./templates/FootballRagistrations/edit.php:31
+#: ./templates/PicnicRagistrations/add.php:27
+#: ./templates/PicnicRagistrations/edit.php:32
+#: ./templates/Profiles/add.php:25
+#: ./templates/Profiles/edit.php:30
+#: ./templates/Students/add.php:28
+#: ./templates/Students/edit.php:32
+msgid "Submit"
+msgstr ""
+
+#: ./templates/Admin/Skills/edit.php:13
+#: ./templates/Admin/Skills/index.php:33
+#: ./templates/Admin/Users/edit.php:12
+#: ./templates/Admin/Users/index.php:85
+#: ./templates/Articles/edit.php:12
+#: ./templates/Articles/index.php:31
+#: ./templates/FootballRagistrations/edit.php:13
+#: ./templates/FootballRagistrations/index.php:31
+#: ./templates/PicnicRagistrations/edit.php:13
+#: ./templates/PicnicRagistrations/index.php:33
+#: ./templates/Profiles/edit.php:13
+#: ./templates/Profiles/index.php:33
+#: ./templates/Students/edit.php:12
+#: ./templates/Students/index.php:35
+#: ./templates/Students/view.php:67
+#: ./templates/Students/view.php:98
+msgid "Delete"
+msgstr ""
+
+#: ./templates/Admin/Skills/edit.php:15
+#: ./templates/Admin/Skills/index.php:33
+#: ./templates/Admin/Skills/view.php:12
+#: ./templates/Admin/Users/edit.php:14
+#: ./templates/Admin/Users/index.php:85
+#: ./templates/Admin/Users/view.php:12
+#: ./templates/Articles/edit.php:14
+#: ./templates/Articles/index.php:31
+#: ./templates/Articles/view.php:12
+#: ./templates/FootballRagistrations/edit.php:15
+#: ./templates/FootballRagistrations/index.php:31
+#: ./templates/FootballRagistrations/view.php:12
+#: ./templates/PicnicRagistrations/edit.php:15
+#: ./templates/PicnicRagistrations/index.php:33
+#: ./templates/PicnicRagistrations/view.php:12
+#: ./templates/Profiles/edit.php:15
+#: ./templates/Profiles/index.php:33
+#: ./templates/Profiles/view.php:12
+#: ./templates/Students/edit.php:14
+#: ./templates/Students/index.php:35
+#: ./templates/Students/view.php:12
+#: ./templates/Students/view.php:67
+#: ./templates/Students/view.php:98
+msgid "Are you sure you want to delete # {0}?"
+msgstr ""
+
+#: ./templates/Admin/Skills/edit.php:24
+#: ./templates/Admin/Skills/view.php:11
+msgid "Edit Skill"
+msgstr ""
+
+#: ./templates/Admin/Skills/index.php:8
+#: ./templates/Admin/Skills/view.php:14
+msgid "New Skill"
+msgstr ""
+
+#: ./templates/Admin/Skills/index.php:9
+msgid "Skills"
+msgstr ""
+
+#: ./templates/Admin/Skills/index.php:31
+#: ./templates/Admin/Users/index.php:83
+#: ./templates/Articles/index.php:29
+#: ./templates/FootballRagistrations/index.php:29
+#: ./templates/PicnicRagistrations/index.php:31
+#: ./templates/Profiles/index.php:31
+#: ./templates/Students/index.php:33
+#: ./templates/Students/view.php:65
+#: ./templates/Students/view.php:96
+msgid "View"
+msgstr ""
+
+#: ./templates/Admin/Skills/index.php:32
+#: ./templates/Admin/Users/index.php:84
+#: ./templates/Articles/index.php:30
+#: ./templates/FootballRagistrations/index.php:30
+#: ./templates/PicnicRagistrations/index.php:32
+#: ./templates/Profiles/index.php:32
+#: ./templates/Students/index.php:34
+#: ./templates/Students/view.php:66
+#: ./templates/Students/view.php:97
+msgid "Edit"
+msgstr ""
+
+#: ./templates/Admin/Skills/index.php:42
+#: ./templates/Articles/index.php:40
+#: ./templates/FootballRagistrations/index.php:40
+#: ./templates/PicnicRagistrations/index.php:42
+#: ./templates/Profiles/index.php:42
+#: ./templates/Students/index.php:44
+msgid "first"
+msgstr ""
+
+#: ./templates/Admin/Skills/index.php:43
+#: ./templates/Articles/index.php:41
+#: ./templates/FootballRagistrations/index.php:41
+#: ./templates/PicnicRagistrations/index.php:43
+#: ./templates/Profiles/index.php:43
+#: ./templates/Students/index.php:45
+msgid "previous"
+msgstr ""
+
+#: ./templates/Admin/Skills/index.php:45
+#: ./templates/Articles/index.php:43
+#: ./templates/FootballRagistrations/index.php:43
+#: ./templates/PicnicRagistrations/index.php:45
+#: ./templates/Profiles/index.php:45
+#: ./templates/Students/index.php:47
+msgid "next"
+msgstr ""
+
+#: ./templates/Admin/Skills/index.php:46
+#: ./templates/Articles/index.php:44
+#: ./templates/FootballRagistrations/index.php:44
+#: ./templates/PicnicRagistrations/index.php:46
+#: ./templates/Profiles/index.php:46
+#: ./templates/Students/index.php:48
+msgid "last"
+msgstr ""
+
+#: ./templates/Admin/Skills/index.php:48
+#: ./templates/Articles/index.php:46
+#: ./templates/FootballRagistrations/index.php:46
+#: ./templates/PicnicRagistrations/index.php:48
+#: ./templates/Profiles/index.php:48
+#: ./templates/Students/index.php:50
+msgid "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total"
+msgstr ""
+
+#: ./templates/Admin/Skills/view.php:12
+msgid "Delete Skill"
+msgstr ""
+
+#: ./templates/Admin/Skills/view.php:22
+#: ./templates/Profiles/view.php:22
+msgid "User"
+msgstr ""
+
+#: ./templates/Admin/Skills/view.php:26
+#: ./templates/Students/view.php:22
+msgid "Name"
+msgstr ""
+
+#: ./templates/Admin/Skills/view.php:30
+#: ./templates/Admin/Users/view.php:34
+#: ./templates/Articles/view.php:26
+#: ./templates/FootballRagistrations/view.php:26
+#: ./templates/PicnicRagistrations/view.php:26
+#: ./templates/Profiles/view.php:26
+#: ./templates/Students/view.php:30
+#: ./templates/Students/view.php:52
+#: ./templates/Students/view.php:81
+msgid "Id"
+msgstr ""
+
+#: ./templates/Admin/Skills/view.php:34
+#: ./templates/Admin/Users/view.php:46
+#: ./templates/Articles/view.php:30
+#: ./templates/Profiles/view.php:34
+msgid "Created"
+msgstr ""
+
+#: ./templates/Admin/Skills/view.php:38
+#: ./templates/Admin/Users/view.php:50
+#: ./templates/Articles/view.php:34
+#: ./templates/Profiles/view.php:38
+msgid "Modified"
+msgstr ""
+
+#: ./templates/Admin/Users/add.php:12
+#: ./templates/Admin/Users/edit.php:16
+#: ./templates/Admin/Users/view.php:13
+msgid "List Users"
+msgstr ""
+
+#: ./templates/Admin/Users/add.php:21
+msgid "Add User"
+msgstr ""
+
+#: ./templates/Admin/Users/edit.php:25
+#: ./templates/Admin/Users/view.php:11
+msgid "Edit User"
+msgstr ""
+
+#: ./templates/Admin/Users/index.php:13
+#: ./templates/Admin/Users/view.php:14
+msgid "New User"
+msgstr ""
+
+#: ./templates/Admin/Users/index.php:14
+msgid "Users"
+msgstr ""
+
+#: ./templates/Admin/Users/index.php:17
+msgid "Search"
+msgstr ""
+
+#: ./templates/Admin/Users/index.php:19
+msgid "Refresh"
+msgstr ""
+
+#: ./templates/Admin/Users/index.php:77
+msgid "Inactive"
+msgstr ""
+
+#: ./templates/Admin/Users/index.php:77
+msgid "Are you sure you want to Inactive # {0}?"
+msgstr ""
+
+#: ./templates/Admin/Users/index.php:79
+msgid "Active"
+msgstr ""
+
+#: ./templates/Admin/Users/index.php:79
+msgid "Are you sure you want to Active # {0}?"
+msgstr ""
+
+#: ./templates/Admin/Users/view.php:12
+msgid "Delete User"
+msgstr ""
+
+#: ./templates/Admin/Users/view.php:22
+msgid "Username"
+msgstr ""
+
+#: ./templates/Admin/Users/view.php:26
+msgid "Email"
+msgstr ""
+
+#: ./templates/Admin/Users/view.php:30
+msgid "Image"
+msgstr ""
+
+#: ./templates/Admin/Users/view.php:38
+#: ./templates/PicnicRagistrations/view.php:30
+#: ./templates/Students/view.php:83
+msgid "Amount"
+msgstr ""
+
+#: ./templates/Admin/Users/view.php:42
+msgid "Status"
+msgstr ""
+
+#: ./templates/Articles/add.php:11
+#: ./templates/Articles/edit.php:16
+#: ./templates/Articles/view.php:13
+msgid "List Articles"
+msgstr ""
+
+#: ./templates/Articles/add.php:18
+msgid "Add Article"
+msgstr ""
+
+#: ./templates/Articles/edit.php:23
+#: ./templates/Articles/view.php:11
+msgid "Edit Article"
+msgstr ""
+
+#: ./templates/Articles/index.php:8
+#: ./templates/Articles/view.php:14
+msgid "New Article"
+msgstr ""
+
+#: ./templates/Articles/index.php:9
+msgid "Articles"
+msgstr ""
+
+#: ./templates/Articles/view.php:12
+msgid "Delete Article"
+msgstr ""
+
+#: ./templates/Articles/view.php:22
+msgid "Title"
+msgstr ""
+
+#: ./templates/Articles/view.php:39
+msgid "Details"
+msgstr ""
+
+#: ./templates/FootballRagistrations/add.php:12
+#: ./templates/FootballRagistrations/edit.php:17
+#: ./templates/FootballRagistrations/view.php:13
+msgid "List Football Ragistrations"
+msgstr ""
+
+#: ./templates/FootballRagistrations/add.php:19
+msgid "Add Football Ragistration"
+msgstr ""
+
+#: ./templates/FootballRagistrations/edit.php:24
+#: ./templates/FootballRagistrations/view.php:11
+msgid "Edit Football Ragistration"
+msgstr ""
+
+#: ./templates/FootballRagistrations/index.php:8
+#: ./templates/FootballRagistrations/view.php:14
+msgid "New Football Ragistration"
+msgstr ""
+
+#: ./templates/FootballRagistrations/index.php:9
+msgid "Football Ragistrations"
+msgstr ""
+
+#: ./templates/FootballRagistrations/view.php:12
+msgid "Delete Football Ragistration"
+msgstr ""
+
+#: ./templates/FootballRagistrations/view.php:22
+#: ./templates/PicnicRagistrations/view.php:22
+msgid "Student"
+msgstr ""
+
+#: ./templates/FootballRagistrations/view.php:30
+#: ./templates/Students/view.php:54
+msgid "Created To"
+msgstr ""
+
+#: ./templates/FootballRagistrations/view.php:34
+#: ./templates/PicnicRagistrations/view.php:38
+#: ./templates/Students/view.php:42
+#: ./templates/Students/view.php:55
+#: ./templates/Students/view.php:85
+msgid "Updated At"
+msgstr ""
+
+#: ./templates/PicnicRagistrations/add.php:12
+#: ./templates/PicnicRagistrations/edit.php:17
+#: ./templates/PicnicRagistrations/view.php:13
+msgid "List Picnic Ragistrations"
+msgstr ""
+
+#: ./templates/PicnicRagistrations/add.php:19
+msgid "Add Picnic Ragistration"
+msgstr ""
+
+#: ./templates/PicnicRagistrations/edit.php:24
+#: ./templates/PicnicRagistrations/view.php:11
+msgid "Edit Picnic Ragistration"
+msgstr ""
+
+#: ./templates/PicnicRagistrations/index.php:8
+#: ./templates/PicnicRagistrations/view.php:14
+msgid "New Picnic Ragistration"
+msgstr ""
+
+#: ./templates/PicnicRagistrations/index.php:9
+msgid "Picnic Ragistrations"
+msgstr ""
+
+#: ./templates/PicnicRagistrations/view.php:12
+msgid "Delete Picnic Ragistration"
+msgstr ""
+
+#: ./templates/PicnicRagistrations/view.php:34
+#: ./templates/Students/view.php:38
+#: ./templates/Students/view.php:84
+msgid "Created At"
+msgstr ""
+
+#: ./templates/Profiles/add.php:12
+#: ./templates/Profiles/edit.php:17
+#: ./templates/Profiles/view.php:13
+msgid "List Profiles"
+msgstr ""
+
+#: ./templates/Profiles/add.php:19
+msgid "Add Profile"
+msgstr ""
+
+#: ./templates/Profiles/edit.php:24
+#: ./templates/Profiles/view.php:11
+msgid "Edit Profile"
+msgstr ""
+
+#: ./templates/Profiles/index.php:8
+#: ./templates/Profiles/view.php:14
+msgid "New Profile"
+msgstr ""
+
+#: ./templates/Profiles/index.php:9
+msgid "Profiles"
+msgstr ""
+
+#: ./templates/Profiles/view.php:12
+msgid "Delete Profile"
+msgstr ""
+
+#: ./templates/Profiles/view.php:30
+msgid "Mobile"
+msgstr ""
+
+#: ./templates/Students/add.php:11
+#: ./templates/Students/edit.php:16
+#: ./templates/Students/view.php:13
+msgid "List Students"
+msgstr ""
+
+#: ./templates/Students/add.php:18
+msgid "Add Student"
+msgstr ""
+
+#: ./templates/Students/edit.php:23
+#: ./templates/Students/view.php:11
+msgid "Edit Student"
+msgstr ""
+
+#: ./templates/Students/index.php:8
+#: ./templates/Students/view.php:14
+msgid "New Student"
+msgstr ""
+
+#: ./templates/Students/index.php:9
+msgid "Students"
+msgstr ""
+
+#: ./templates/Students/view.php:12
+msgid "Delete Student"
+msgstr ""
+
+#: ./templates/Students/view.php:26
+msgid "Country"
+msgstr ""
+
+#: ./templates/Students/view.php:34
+msgid "Age"
+msgstr ""
+
+#: ./templates/Students/view.php:47
+msgid "Related Football Ragistrations"
+msgstr ""
+
+#: ./templates/Students/view.php:53
+#: ./templates/Students/view.php:82
+msgid "Student Id"
+msgstr ""
+
+#: ./templates/Students/view.php:76
+msgid "Related Picnic Ragistrations"
+msgstr ""
+
+#: ./templates/layout/error.php:38
+msgid "Back"
+msgstr ""
+

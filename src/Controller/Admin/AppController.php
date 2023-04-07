@@ -45,6 +45,7 @@ class AppController extends Controller
         $this->loadComponent('Flash');
         $this->loadComponent('UserLogs');
 
+
         // **Code for Auth Component *************************************************************
 
                     $this->loadComponent('Auth', [
