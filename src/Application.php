@@ -70,6 +70,7 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
         }
 
         // Load more plugins here
+        $this->addPlugin('ADmad/I18n');
     }
 
     /**
@@ -107,9 +108,22 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
             // Cross Site Request Forgery (CSRF) Protection Middleware
             // https://book.cakephp.org/4/en/security/csrf.html#cross-site-request-forgery-csrf-middleware
 
+            ->add(new \ADmad\I18n\Middleware\I18nMiddleware([
+                // If `true` will attempt to get matching languges in "languages" list based
+                // on browser locale and redirect to that when going to site root.
+                'detectLanguage' => true,
+                // Default language for app. If language detection is disabled or no
+                // matching language is found redirect to this language
+                'defaultLanguage' => 'en',
+                // Languages available in app. The keys should match the language prefix used
+                // in URLs. Based on the language the locale will be also set.
+            ]))
+
             ->add(new CsrfProtectionMiddleware([
                 'httponly' => true,
             ]));
+
+           
 
         return $middlewareQueue;
     }

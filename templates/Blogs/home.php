@@ -9,7 +9,7 @@
 <div class="container">
     <div class="row">
         <div class="col-4">
-            <h3 style="color: #fff;" class="bg-info text-capitalize p-1">Recent Post</h3>
+            <h3 style="color: #fff;" class="bg-info text-capitalize p-1"><?= __('Recent Post') ?></h3>
             <ul class="list-group list-group-flush">
             <?php foreach ($articleLists as $key => $articleList): ?>
               <li class="list-group-item"><a href=<?= $this->Url->build(['controller' => 'blogs', 'action' => 'view',$key]) ?>><?= $articleList?></a></li>

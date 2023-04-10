@@ -51,6 +51,10 @@ return function (RouteBuilder $routes) {
          * to use (in this case, templates/Pages/home.php)...
          */
         $builder->connect('/', ['controller' => 'Blogs', 'action' => 'home']);
+        $builder->connect('/', ['controller' => 'Blogs', 'action' => 'home'],['routeClass' => 'ADmad/I18n.I18nRoute']);
+        $builder->connect('/students', ['controller' => 'Students', 'action' => 'index'],['routeClass' => 'ADmad/I18n.I18nRoute']);
+        $builder->connect('/articles', ['controller' => 'Articles', 'action' => 'index'],['routeClass' => 'ADmad/I18n.I18nRoute']);
+
 
         /*
          * ...and connect the rest of 'Pages' controller's URLs.
@@ -93,5 +97,23 @@ return function (RouteBuilder $routes) {
      * });
      * ```
      */
+
+     $routes->scope('/api', function (RouteBuilder $builder) {
+        $builder->setExtensions(['json']);
+
+        $builder->post(
+            '/user/login',
+            ['controller'=>'PricePlus','action'=>'login','prefix'=>'Api']
+        );
+
+        $builder->get(
+            '/add-friends',
+            ['controller'=>'PricePlus','action'=>'addFriends','prefix'=>'Api']
+        );
+
+
+     });
+
+     
 
 };
